@@ -18,4 +18,4 @@ numpy는 다차원배열의 연산이나,수학적인 계산을 해주는 라이
 * numpy.linalg.det(array): array의 행렬식(determinant) 계산
 * numpy.linalg.inv(array): array의 역행렬(inverse matrix)을 구하는 메소드
 * numpy.linalg.eig(mat): mat의 고유값(eigenvalue)과 고유벡터(eigenvector)를 구하는 메소드
-* 
+* 이외에도 더 많은 메소드들이 존재함.....ㅇㅅㅇ
