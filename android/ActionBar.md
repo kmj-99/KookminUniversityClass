@@ -16,7 +16,7 @@ Action bar
 #### 1.menu라는 Directory를 생성하고 그 안에 menu.xml파일을 생성  
 #### 2.```<item>```태그를 사용해서 아이콘을 채운다. 그러면 Action bar에 아이콘이 채워짐
 #### 이때 태그안에 내가 지정한 image를 ```android:icon```을 이용해서 집어넣으면 Action bar에 아이콘이 추가 됨
-#### 3. getMenuInflater().inflate를 이용해서 MainActivity.xml에 Action bar에 미리 만들어놓은 menu.xml을 inflate한다.
+#### 3. getMenuInflater().inflate를 이용해서 MainActivity.xml의 Action bar에 미리 만들어놓은 menu.xml을 inflate한다.
 ```jave
     public boolean onCreateOptionsMenu(Menu menu) {  
     getMenuInflater().inflate(R.menu.menu_main,menu); // menu_main을 menu에 붙힘,getMenuInfalter().inflate을 사용하여서 menu생성  
