@@ -2,8 +2,8 @@ numpy
 =====
 ## 목차
 1. [Core Mission](#-Core-Mission)
-2. [Bonus Mission 1](#-Bonus-Mission)
-3. [Bonus Mission 2]
+2. [Bonus Mission 1](#-Bonus-Mission-1)
+3. [Bonus Mission 2](#-Bonus-Mission-2)
 ## Core Mission
 - menu("id":"String","name":"String","price":int)을 가지고 CRUD을 구현하는 과제
 
