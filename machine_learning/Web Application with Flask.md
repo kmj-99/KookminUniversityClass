@@ -3,7 +3,7 @@ numpy
 ## 목차
 1. [Core Mission](#-Core-Mission)
 2. [Bonus Mission 1](#-Bonus-Mission)
-
+3. [Bonus Mission 2]
 ## Core Mission
 - menu("id":"String","name":"String","price":int)을 가지고 CRUD을 구현하는 과제
 
@@ -87,7 +87,7 @@ def create_menu():
  ```
 - len()을 통해서 menus의 크기를 구해서 적절한 id값을 유연하게 처리하였다!
 
-## Bouns Mission 3
+## Bouns Mission 2
 - 위에서 구현한 API를 데이터베이스과 연결하는 과제
 - 일단 나는 ``` from flask_sqlalchemy import SQLAlchemy #ORM형식```을 이용하였다
 - 따로 Weapon.py를 만들어서 데이터베이스를 세팅했다.
