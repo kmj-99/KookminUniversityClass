@@ -15,3 +15,6 @@
         }
 ```
 #### 위 코드가 addItem함수다. 일단 소스코드를 모두 검토를 해봐야 한다... 
+#### 드디어 에러를 해결했다. 
+#### 에러가 난 이유는 내가 프레그먼트를 만들지 않고 일반 자바소스코드로 만들어서  Fragment를 상속받을 때 ```import androidx.fragment.app.Fragment;```가 import가 되야하는데  
+#### ```import android.app.Fragment;```가 들어간 것이다. 
