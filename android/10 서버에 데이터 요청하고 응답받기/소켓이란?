@@ -1,0 +1,208 @@
+- 이번에 소켓을 활용해서 데이터를 주고받는 과정을 학습했다.
+#### activity_main.xml - 화면을 클라이언트,서버 2개로 나누어서 구성한다
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/design_default_color_secondary">
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="hello"/>
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전송"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"/>
+            </ScrollView>
+        </HorizontalScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/cardview_shadow_start_color"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서버 시작"/>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"/>
+            </ScrollView>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</LinearLayout>
+```
+
+#### MainActivity.java - `Socket`,`InetAddress`,`ObjectInputStream`,`ObjectOutputStream`을 활용해서 소켓을 활용한 데이터 전송,응답을 구현한다
+```java
+public class MainActivity extends AppCompatActivity {
+    EditText editText;
+
+    TextView textView;
+    TextView textView2;
+
+    Handler handler=new Handler();
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editText=findViewById(R.id.editText);
+        textView=findViewById(R.id.textView);
+        textView2=findViewById(R.id.textView2);
+
+        Button button=findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                final String data=editText.getText().toString(); // 전송되는 메시지가 그대로 전달되어야 하기에 final로 선언
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        send(data);
+                    }
+                }).start();
+            }
+        });
+
+        Button button2=findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        startServer();
+                    }
+                }).start();
+            }
+        });
+    }
+
+    public void printClientLog(final String data){
+        Log.d("MainActivity",data);
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                textView.append(data+"\n");
+            }
+        });
+    }
+
+    public void printServerLog(final String data){
+        Log.d("MainActivity",data);
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                textView2.append(data+"\n");
+            }
+        });
+    }
+
+    public void send(String data){
+        try{
+            int portNumber=5001;
+            Socket sock=new Socket("localhost",portNumber); //단말기의 ip주소를 포트번호와 같이 넣어줌
+            printClientLog("소켓 연결함");
+            ObjectOutputStream outstream =new ObjectOutputStream(sock.getOutputStream());
+            //문자를 주고받을때 byte array로 바꾸어서 보내면 받는 사람은 byte array를 다시 문자로 바꾸는 과정들이 필요하다.
+            //byte array이로 바꾸어서 보내는 이유는 서버가 c,자바스크립트등등 java가 아닌 언어일 수도 있기에 범용적으로 byte array로 바꾸어서 보냄
+            //즉 ObjectOutputStream은 문자나 객체를 쉽게 보낼 수 있도록 해주는 클래스다(문자를 byte array이로 바꾸는 행위같은 것)
+
+            outstream.writeObject(data); //객체를 집어넣음. String도 객체임
+            outstream.flush(); // 버퍼에 데이터가 남아있을 수도 있기에 남아잇는 걸 전부 플러시하는 과정
+            printClientLog("데이터 전송함");
+
+            ObjectInputStream instream=new ObjectInputStream(sock.getInputStream());
+            //ObjectInputStream: 서버에서 오는 응답데이터를 받는 클래스음
+
+            printClientLog("서버로부터 받음: "+instream.readObject());
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+    public void startServer(){
+        try{
+            int portNumber=5001;
+
+            ServerSocket server=new ServerSocket(portNumber);
+
+            printServerLog("서버 시작함: "+portNumber);
+            while(true){
+                Socket sock=server.accept(); // 접속을 기다리다가 클라이언트의 접속 요청이 왔을 때 accept()메서드를 통해 소켓 객체가 반환되므로 클라이언트 소켓의 연결 정보를 확인할 수 있다.
+                InetAddress clientHost=sock.getLocalAddress();
+                //서버와 연결된 클라언트의 ip주소를 뽑아옴
+
+                int clientPort=sock.getPort();
+                //서버와 연결된 클라이언트의 포트번호를 뽑아옴
+                printServerLog("클라이언트 연결됨"+clientHost+":"+clientPort);
+
+                ObjectInputStream instream = new ObjectInputStream(sock.getInputStream());
+                Object obj = instream.readObject();
+                printClientLog("데이터 받음"+obj);
+
+                ObjectOutputStream outstream=new ObjectOutputStream(sock.getOutputStream());
+                outstream.writeObject(obj+"from Server");
+                outstream.flush();
+                printServerLog("데이터보냄");
+
+                sock.close();
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+}
+```
+
+- 느낀 점: 이번 코드에는 주석이 좀 많다. 그 이유는 익숙하지 않았기 떄문이다... 하지만 네트워킹을 실제로 코드로 구현하고 작동을 시켜보니 뭔가 한 스텝 앞으로 나아간 거 같은 느낌이 들었다  
+
+
+
+
+
+
+
+
