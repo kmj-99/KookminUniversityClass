@@ -1,6 +1,6 @@
 ## 이번 진행할 프로젝트는 카카오톡의 더보기화면을 xml로 구성해보는 프로젝트다.
 #### 9/09 현재 화면구성이 거의 끝났다. 적절한 아이콘만 찾아서 넣으면 끝이다. 하지만 아직 똑같아 보이진 않아서 따로 최적화를 해야할 거 같다
-#### 9/10![Screenshot_1631282338](https://user-images.githubusercontent.com/76093968/132866813-c3e662f7-4cdb-4226-9e49-61b04cbc1732.png)
+#### 9/10(activity_main.xml)![Screenshot_1631282338](https://user-images.githubusercontent.com/76093968/132866813-c3e662f7-4cdb-4226-9e49-61b04cbc1732.png)
 ## 사용한 레이아웃
 - LinearLayout - 거의 리니어만 썼던 거 같다. 전체적인 화면배치와 리니어안에 리니어를 넣으면서 화면을 구성하였다.
 - GrudLayout - 노란색 화면 밑에 16개의 아이콘을 4*4격자 형태로 나타내는 데 썼다.
