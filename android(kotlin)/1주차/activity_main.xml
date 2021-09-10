@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/menu_appbar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#131313"
+            android:text="더보기"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="25sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:background="#FDE500">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/wallet"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="지갑"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:src="@drawable/right" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="140dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/certification" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="인증서"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/qrcode_2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="QR 체크인"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/plus"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1.5"
+                android:background="@drawable/shape"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/plus_kakao_icon_shape" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/plus_plus_icon_shape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="톡서랍 플러스 체험해보기"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="130dp"
+                    android:src="@drawable/plus_right_icon_shape" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pay"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.7"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/pay_kakao_icon_shape" />
+
+                <TextView
+                    android:id="@+id/Pay_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="PAY"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/LeftMoney_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="0원"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/do_icon"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="송금"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:text="결제"
+                        android:textStyle="bold"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="자산"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="30dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/shopping_cart_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:textStyle="bold"
+                        android:text="구매내역"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:rowCount="4"
+        android:columnCount="4">
+
+        <Button
+            android:id="@+id/grid_maile_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FBF7F7"
+            android:background="#00ff0000"
+            android:drawableTop="@drawable/mail_icon_shape"
+            android:text="메일"
+            android:textSize="11sp"
+            android:textColor="@color/black"
+            />
+        <Button
+            android:id="@+id/grid_calender_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="캘린더"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/calender_icon_shape"
+            android:backgroundTint="@color/white"
+            android:background="#00ff0000"
+            android:textColor="@color/black"/>
+        <Button
+            android:id="@+id/grid_drawable_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서랍"
+            android:textSize="11sp"
+            android:backgroundTint="@color/white"
+            android:background="#00ff0000"
+            android:drawableTop="@drawable/drawer_icon_shape"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/grid_cone_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:drawableTop="@drawable/grid_cone_icon_shape"
+            android:text="카카오콘"
+            android:textSize="11sp"
+            android:textColor="@color/black" />
+        <Button
+            android:id="@+id/grid_makers_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="메이커스"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_makers_icon_shape"/>
+        <Button
+            android:id="@+id/grid_gift_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="선물하기"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_gift_icon_shape"/>
+        <Button
+            android:id="@+id/grid_emoticon_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="이모티콘"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_smile_icon_shape"/>
+        <Button
+            android:id="@+id/grid_friend_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="프렌즈"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_bear_icon_shape"
+            />
+
+        <Button
+            android:id="@+id/grid_shopping_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="쇼핑하기"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_shopping_icon_shape"/>
+        <Button
+            android:id="@+id/grid_fashion_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="패션"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_fashion_icon_shape"/>
+        <Button
+            android:id="@+id/grid_order_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="주문하기"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_meal_icon_shape"/>
+        <Button
+            android:id="@+id/grid_melon_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="멜론티켓"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_melon_icon_shape"/>
+        <Button
+            android:id="@+id/grid_game_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="게임"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_game_icon_shape"/>
+        <Button
+            android:id="@+id/grid_subscribr_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="구독ON"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_subscribe_icon_shape"/>
+        <Button
+            android:id="@+id/grid_um_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="음"
+            android:textSize="11sp"
+            android:drawableTop="@drawable/grid_um_icon_shape"/>
+        <Button
+            android:id="@+id/grid_all_service_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="전체서비스"
+            android:textSize="10sp"
+            android:drawableTop="@drawable/grid_all_service_icon_shape"/>
+
+
+    </GridLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F9F9F9"
+        app:menu="@menu/menu_bottomnavigationview" />
+
+</LinearLayout>
