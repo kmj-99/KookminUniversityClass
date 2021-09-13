@@ -1,12 +1,12 @@
 ## 이번 진행할 프로젝트는 카카오톡의 더보기화면을 xml로 구성해보는 프로젝트다.
-#### 해상도를 고려 안 한 화면 
+# 해상도를 고려 안 한 화면 
 #### 9/10(activity_main.xml(해상도 고려X))![Screenshot_1631282338](https://user-images.githubusercontent.com/76093968/132866813-c3e662f7-4cdb-4226-9e49-61b04cbc1732.png)
 ## 사용한 레이아웃
 - LinearLayout - 거의 리니어만 썼던 거 같다. 전체적인 화면배치와 리니어안에 리니어를 넣으면서 화면을 구성하였다.
 - GrudLayout - 노란색 화면 밑에 16개의 아이콘을 4*4격자 형태로 나타내는 데 썼다.
 - FrameLayout - 이 화면은 4*4격자인 그리드 바로 밑에 만들었다. 만든이유는 실제 화면에 밑에 광고가 있는데 그걸 표현하려고 사용했다.  
 
-#### 해상도를 고려 한 화면
+# 해상도를 고려 한 화면
 #### 9/13(activity_main(해상도 고려O))![2021-09-13 (3)](https://user-images.githubusercontent.com/76093968/133098531-c30599c6-31b1-46c6-a344-4e8247a9aff9.png)
 ## 사용한 레이아웃 
 - ConstraintLayout - 전체적인 화면의 비율을 percent로 맟추는 데 사용
