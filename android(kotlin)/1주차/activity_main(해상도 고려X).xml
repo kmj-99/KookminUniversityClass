@@ -432,5 +432,5 @@
         android:layout_height="wrap_content"
         android:background="#F9F9F9"
         app:menu="@menu/menu_bottomnavigationview" />
-
+ 
 </LinearLayout>
