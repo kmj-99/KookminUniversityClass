@@ -6,4 +6,4 @@
 #### 9/18 현재 바텀바에 특정 아이콘만 클릭했을 때 아무효과도 안 나게 하고싶은 데 잘 안된다.. Ripple effect,selector라는 키워드로 피드백을 받고 찾아보고 있다.
 - 이 부분은 바텀바 리스너를 통해서 when으로 어떤 아이콘이 클릭됬는지를 판별했는 데 이떄 특정 아이콘에서 그냥 finish를 하면 그 버튼을 눌렀을 때 나타나는 ripple effect도 사라진다.
 - 아래 사진에서 R.id.icon3에 finish()를 주었다.
-![2021-09-19](https://user-images.githubusercontent.com/76093968/133894687-e7ed7430-d0e9-49e6-9930-89e58584f691.png)
+![2021-09-19 (1)](https://user-images.githubusercontent.com/76093968/133894879-add648c1-272f-4638-a87a-bf5099daebbf.png)
