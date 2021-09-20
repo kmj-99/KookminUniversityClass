@@ -7,3 +7,6 @@
 - 이 부분은 바텀바 리스너를 통해서 when으로 어떤 아이콘이 클릭됬는지를 판별했는 데 이떄 특정 아이콘에서 그냥 finish를 하면 그 버튼을 눌렀을 때 나타나는 ripple effect도 사라진다.
 - 아래 사진에서 R.id.icon3에 finish()를 주었다.
 ![2021-09-19 (1)](https://user-images.githubusercontent.com/76093968/133894879-add648c1-272f-4638-a87a-bf5099daebbf.png)
+#### 9/20 특정 프레그먼트로 넘어갈 때 반만 나타나게 하고 나머지는 이전 프레그먼트를 투명하게 보여주는 기능을 구현했다.(밑에 이미지 참고)
+
+![2021-09-20 (1)](https://user-images.githubusercontent.com/76093968/134017683-bd73652d-d916-4a02-b992-671d8834dd7f.png)
