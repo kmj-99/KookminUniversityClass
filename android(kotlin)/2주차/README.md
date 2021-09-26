@@ -15,3 +15,6 @@
 - 이부분은 그냥 스크롤뷰를 이용을 하는 게 더 간단할 거 같아서 중첨 리사이클러뷰는 참고만 했다.
 #### 9/24 전체적인 틀을 갖추는 건 끝났고 레이아웃의 세세한 부분이랑 생명주기를 이용하아는 것만 코딩하면 끝이다. 
 #### 9/25 화면스크롤을 좀 더 역동적으로 보여주기 위해 CollapsingToolbarLayout을 이용해서 레이아웃을 구성하고 있다.
+#### 9/26 CollapsingToolbarLayout을 이용해서 레이아웃을 구성했다
+![2021-09-26 (1)](https://user-images.githubusercontent.com/76093968/134812206-f4e14c71-8b5c-48fe-a59d-8322012818f6.png)
+![2021-09-26 (2)](https://user-images.githubusercontent.com/76093968/134812211-671f7cad-0c91-43e5-9fdd-6137ac727d8e.png)
