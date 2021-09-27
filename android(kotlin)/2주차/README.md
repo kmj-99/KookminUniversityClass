@@ -28,7 +28,7 @@
 ![5](https://user-images.githubusercontent.com/76093968/134930018-4996783c-5e32-4f74-a6ae-2629a109ff8c.png)
 
 
-
+- 위 이미지처럼 xml만 구성하면 끝이다.
 
 
 
