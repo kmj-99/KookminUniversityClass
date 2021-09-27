@@ -18,3 +18,17 @@
 #### 9/26 CollapsingToolbarLayout을 이용해서 레이아웃을 구성했다
 ![2021-09-26 (1)](https://user-images.githubusercontent.com/76093968/134812206-f4e14c71-8b5c-48fe-a59d-8322012818f6.png)
 ![2021-09-26 (2)](https://user-images.githubusercontent.com/76093968/134812211-671f7cad-0c91-43e5-9fdd-6137ac727d8e.png)
+#### 9/27 기능들은 다 완성했다. 전체적인 틀과 자세한 기능들을 다 구현했기 때문에 레이아웃을 추가하거나 레이아웃디자인을 좀 더 세세하게 작업만 하면된다.  
+#### 이런 부분은 그냥 xml만 짜면 되기때문에 사실상 다 구현했다.
+
+![1](https://user-images.githubusercontent.com/76093968/134929969-6eea9d35-af2b-4e44-8939-b6ee198fdd8a.png)
+![2](https://user-images.githubusercontent.com/76093968/134929983-bbf08bb2-d3eb-40c7-a9ef-3b7c65341054.png)
+![3](https://user-images.githubusercontent.com/76093968/134929995-9d3fa0e1-6def-4453-859d-37580b9ca47b.png)
+![4](https://user-images.githubusercontent.com/76093968/134930006-83fba8b0-e3fa-4665-a79e-efbe627a4d86.png)
+![5](https://user-images.githubusercontent.com/76093968/134930018-4996783c-5e32-4f74-a6ae-2629a109ff8c.png)
+
+
+
+
+
+
