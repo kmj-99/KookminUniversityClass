@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/Home_Item"
+        android:title="profile"
+        app:showAsAction="always"
+        android:icon="@drawable/home_icon"/>
+
+    <item
+        android:id="@+id/Chat_Item"
+        android:title="Chat"
+        app:showAsAction="always"
+        android:icon="@drawable/search_icon"/>
+
+    <item
+        android:id="@+id/Heart_Item"
+        android:title="View"
+        app:showAsAction="always"
+        android:icon="@drawable/heart_icon"/>
+    <item
+        android:id="@+id/Bills_Item"
+        android:title="Shopping"
+        app:showAsAction="always"
+        android:icon="@drawable/bills_icon"/>
+    <item
+        android:id="@+id/Profile_Item"
+        android:title="More_information"
+        app:showAsAction="always"
+        android:icon="@drawable/profile_icon"/>
+
+
+</menu>
