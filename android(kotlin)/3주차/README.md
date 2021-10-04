@@ -9,3 +9,5 @@
 <item name="android:windowFullscreen">true</item>
 ```
 #### 10/2 현재 배민에서의 핵심적인 기능들은 다 구현했다. 대표적으로 collapsingLayouy활용과 ScrollView에서 setOnScrollChangeListener를 이용해서 기능을 처리하는 게 있었다.
+#### 10/4 리사이클러뷰의 CRUD를 간단하게 구현해보았다. 아직 완벽한 건 아니지만 CRUD를 한 번 만들어 봤다는 거에 큰 의의를 둔다.
+#### 아 그리고 멘토님이 내주신 과제,챌린지과제까지 다 구현을 해보았다. 기능구현에 좀 신경을 쓴거라서 레이아웃 부분에서 부족한 부분이 있긴하다.. 
