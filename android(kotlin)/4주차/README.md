@@ -8,3 +8,6 @@ var handler1: Handler=Handler(Looper.getMainLooper())
 #### 하지만 캐릭터를 움직이게하는 스레드 떄문에 항상 메시지큐가 꽉차있어서 다른 스레드에서 UI조작을 하는 코드를 작성해도 차례가 맨 뒤에 있었다.
 #### 그래서 이걸 해결하기 위해 post대신에 `postAtFrontOfQueue`을 썼다. 이름에서도 알 수 있듯이 메시지큐 멘 앞에 보내도록 만들어서 제일 먼저 처리해주도록 하는 것이다.
 
+#### 10/8 현재 2개의 플러스 아이콘과 3개의 마이너스 아이콘이 밑으로 내려와서 캐릭터가 접촉하면 그 아이콘이 사라지게 끔 구현을 하였다. 밑에 참고
+
+![test](https://user-images.githubusercontent.com/76093968/136573892-f9b307fb-7315-4aef-9dcf-0a85737c73e4.gif)
