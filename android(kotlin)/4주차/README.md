@@ -11,3 +11,5 @@ var handler1: Handler=Handler(Looper.getMainLooper())
 #### 10/8 현재 2개의 플러스 아이콘과 3개의 마이너스 아이콘이 밑으로 내려와서 캐릭터가 접촉하면 그 아이콘이 사라지게 끔 구현을 하였다. 밑에 참고
 
 ![test](https://user-images.githubusercontent.com/76093968/136573892-f9b307fb-7315-4aef-9dcf-0a85737c73e4.gif)
+
+#### 10/9 지금 안되는 게 딱 하나있다. 바로 게임이 끝난후 스코어 액티비티로 넘어가는 과정이 안 되고있다.... 데이터 충돌 때문에 그런 거 같은데 계속 시도를 해봐야지
