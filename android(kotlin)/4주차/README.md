@@ -17,3 +17,6 @@ var handler1: Handler=Handler(Looper.getMainLooper())
 #### 10/10 기능들을 다 구현했다. 난 좀더 많은 아이콘을 넣고 싶었지만 스레드관리가 어려워 질까봐 7개의 아이콘만 스레드를 만들어서 실행시켰다.
 #### 현재 레이아웃 디자인에 신경을 쓰고 있다.
 #### 10/11 디자인과 BGM까지 넣어서 완성을 했다. 
+#### 코드는 SimpleGame-Android- 레포지토리에 있다.
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/76093968/136978511-b91b1186-04d4-4174-95c9-110a53faf5a8.gif)
