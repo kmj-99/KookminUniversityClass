@@ -9,4 +9,4 @@
 #### 3. ```sudo mkswap /swapfile``` 스왑메모리로 변경
 #### 4. ```sudo swapon /swapfile```  스왑메모리 활성화 
 
-참조 홈페이지: https://steps4great.tistory.com/7
+참조 홈페이지: https://steps4great.tistory.com/7 
