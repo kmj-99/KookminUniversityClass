@@ -26,4 +26,4 @@
 
 
 ## HW1 최종보고서
-[20182207-김민중- HW1 (1).pdf](https://github.com/kmj-99/KookminUniversityClass/files/9037255/20182207-.-.HW1.1.pdf)
+[HW1최종보고서.pdf](https://github.com/kmj-99/KookminUniversityClass/files/9037255/20182207-.-.HW1.1.pdf)
