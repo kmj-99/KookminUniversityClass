@@ -1,6 +1,26 @@
 # HW - Stack,Queue,Doubly Linked List구현 
 
 ## 1) ListIterator를 포함하여 Doubly Linked List를 구현 (DList.java)
+
+List인터페이스를 정의
+
+```.java
+
+public interface List<E> {
+	public void clear();
+	public void insert(int pos , E item);
+	public void appendLast(E item);
+	public void appendFirst(E item);
+	public void update(int pos , E item);
+	public E getValue(int pos);
+	public E remove(int pos);
+	public int length();
+	public ListIterator<E> listIterator();
+}
+```
+
+<br/><br/>
+
 List를 상속받아서 DLinkList를 구현.
 ```.java
 public class DLinkList<E> implements List<E>{
@@ -141,10 +161,10 @@ public class DLinkList<E> implements List<E>{
 ```
 
 
-
+<br/><br/>
 ## 2) Array를 사용하여 Stack을 구현 (ArrayStack.java)
 
-Stack을 구현할 메서드를 인터페이스로 정의 
+Stack인터페이스 정의
 
 ```.java
 public interface Stack<E> {
@@ -218,10 +238,10 @@ public class ArrayStack<E> implements Stack<E>{
 
 ```
 
-
+<br/><br/>
 ## 3) Link를 사용하여 Queue를 구현 (LinkedQueue.java)
 
-Queue를 구현할 메서드를 인터페이스로 정의 
+Queue인터페이스 
 ```.java
 public interface Queue<E> {
 	public void clear();
