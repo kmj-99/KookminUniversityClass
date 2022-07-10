@@ -1,7 +1,7 @@
 해당 과제는 ArrayList와 LinkedList를 구현하는 과제이다.
 
 
-### 개발환경
+## 개발환경
 **OS** : 윈도우  
 
 **IDE** : 이클립스(JDK 1.17)  
@@ -10,7 +10,7 @@
 
 
 
-### ArrayList 구현
+## ArrayList 구현
 
 밑에 List라는 인터페이스를 상속받아서 ArrayList를 구현한다.
 
@@ -28,7 +28,7 @@ public interface List<E> {
 }
 
 ```
-
+<br/><br/>
 
 Array List 구현코드
 
@@ -103,7 +103,7 @@ public class ArrayList<E> implements List<E> {
 }
 
 ```
-
+<br/><br/>
 
 구현한 ArrayList를 ArrayListTest클래스를 만들어서 테스트를 해보았다.
 
@@ -128,16 +128,16 @@ public class ArrayListTest {
 	}
 }
 ```
-
+<br/><br/>
 출력 결과
 ![reulst_2](https://user-images.githubusercontent.com/76093968/178142546-2df7d486-fe53-4f16-a16b-6e98e56eb93b.png)
 
 
+<br/><br/><br/>
 
+## LinkedList구현
 
-### LinkedList구현
-
-마찬가지로 위에 있는 인터페이스인 List를 상속받아서 LinkedList를 구현하다.
+마찬가지로 위에 있는 인터페이스인 List를 상속받아서 LinkedList를 구현다.
 
 ```.java
 public class LinkedList<E> implements List<E> {
@@ -251,7 +251,7 @@ public class LinkedList<E> implements List<E> {
 
 
 ```
-
+<br/><br/>
 구현한 LinkedList를 LinkedListTest클래스를 만들어서 테스트를 해보았다.
 
 ```.java
@@ -273,7 +273,7 @@ public class LinkedListTest {
 }
 
 ```
-
+<br/><br/>
 출력 결과
 
 ![result_1](https://user-images.githubusercontent.com/76093968/178142685-08d3efa4-0cb3-486c-a469-14dc18cf9dcd.png)
