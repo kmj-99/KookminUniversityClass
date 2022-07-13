@@ -72,7 +72,8 @@ public class INode<E> implements BinNode<E>{
 
 ![test_image](https://user-images.githubusercontent.com/76093968/178686501-34359b46-c432-4a6d-a3b8-b7cd18fafda9.png)
 
-그래서 위 트리를 실제 코드로 구성하고 inorder traversal를 수행하였을 때 올바르게 문장이 나오도록 구현하고 테스트 해보았다.
+<br/>
+위 트리를 실제 코드로 구성하고 inorder traversal를 수행하였을 때 올바르게 문장이 나오도록 구현하고 테스트를 했다..  
 
 ```.java
 public class INodeTest {
@@ -118,8 +119,134 @@ public static <E> void inorder(BinNode rt) {
 ```
 
 
+![res_image](https://user-images.githubusercontent.com/76093968/178688108-6f1ec82a-7a3f-422c-95fc-fcf71906d574.png)
 
+<br/><br/>
 
+## task4
+preoder , inorder , postorder traversal을 수행하는 함수를 구현하였다. 
+```.java
+public static <E> void preorder(BinNode rt) {
+  if(rt==null) return;
+  
+  System.out.print(rt.element());
+  preorder(rt.left());
+  preorder(rt.right());
+}
 
+public static <E> void inorder(BinNode rt) {
+  if(rt==null) return;
+
+  inorder(rt.left());
+  System.out.print(rt.element());
+  inorder(rt.right());
+}
+
+public static <E> void postorder(BinNode rt) {
+  if(rt==null) return;
+  
+  postorder(rt.left());
+  postorder(rt.right());
+  System.out.print(rt.element());
+  }
+}
+
+```
+<br/>
+위 함수들이 잘 작동하는지 test코드를 만들어서 테스트를 해보았다.
+
+```.java
+public class INodeTest {
+  public static void main(String[] args) {
+  
+  //왼쪽 서브트리
+  BinNode<String> d=new INode<>("D",null,null);
+  BinNode<String> t1=new INode<>("T",null,null);
+  BinNode<String> a2=new INode<>("A",d,t1);
+
+  BinNode<String> s=new INode<>("S",null,null);
+  BinNode<String> r2=new INode<>("R",null,null);
+  BinNode<String> t2=new INode<>("T",s,r2);
+  BinNode<String> a1=new INode<>("A",a2,t2);
+
+//오른쪽 서브트리
+  BinNode<String> e=new INode<>("E",null,null);
+  BinNode<String> u2=new INode<>("U",null,null);
+  BinNode<String> r1=new INode<>("R",u2,e);
+
+  BinNode<String> c=new INode<>("C",null,null);
+  BinNode<String> t3=new INode<>("T",c,r1);
+
+  //루트 노드
+  BinNode<String> u1=new INode<>("U",a1,t3); // root node
+
+  System.out.print("preorder: ");
+  preorder(u1);
+  System.out.println();
+  System.out.print("inorder: ");
+  inorder(u1);
+  System.out.println();
+  System.out.print("postorder: ");
+  postorder(u1);
+}
+
+```
+
+![order_image](https://user-images.githubusercontent.com/76093968/178691355-f3b881ce-44a5-4116-be64-560768e437f8.png)
+
+<br/><br/>
+
+## task5
+
+BinNode를 상속받아서 서브트리가 없는 LNode를 구현하였다.
+
+```.java
+public class LNode<E> implements BinNode<E> {
+  
+    public E data;
+  
+  public LNode(E data) {
+     this.data=data;
+  }
+
+  @Override
+  public E element() {
+      return data;
+  } 
+
+  @Override
+  public E setElement(E item) {
+    this.data=item;
+    return this.data;
+  
+  }
+
+  @Override
+  public BinNode<E> left() {
+    return null;
+  }
+
+  @Override
+  public BinNode<E> right() {
+    return null;
+  }
+
+  @Override
+  public boolean isLeaft() {
+    return false;
+  }
+
+}
+
+```
+
+<br/><br/>
+
+## task6
+task3에서 구현하였던 tree에서 INode를 LNode로 바꾸는 작업을 하고 테스트를 해본 결과 INode를 쓸때와 똑같은 결과가 나왔다.
+
+```.java
+
+```
 
 
