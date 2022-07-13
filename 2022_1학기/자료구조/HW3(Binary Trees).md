@@ -243,10 +243,49 @@ public class LNode<E> implements BinNode<E> {
 <br/><br/>
 
 ## task6
-task3에서 구현하였던 tree에서 INode를 LNode로 바꾸는 작업을 하고 테스트를 해본 결과 INode를 쓸때와 똑같은 결과가 나왔다.
+task3에서 구현하였던 tree에서 INode를 LNode로 바꾸는 작업을 하고 테스트를 해보았을 때 INode를 쓸때와 똑같은 결과가 나왔다.
 
 ```.java
 
+public class INodeTest {
+  public static void main(String[] args) {
+
+
+    //왼쪽 서브트리
+    LNode<String> d=new LNode<>("D");
+    LNode<String> t1=new LNode<>("T");
+    BinNode<String> a2=new INode<>("A",d,t1);
+
+    LNode<String> s=new LNode<>("S");
+    LNode<String> r2=new LNode<>("R");
+    BinNode<String> t2=new INode<>("T",s,r2);
+    BinNode<String> a1=new INode<>("A",a2,t2);
+
+
+    //오른쪽 서브트리
+    LNode<String> e=new LNode<>("E");
+    LNode<String> u2=new LNode<>("U");
+    BinNode<String> r1=new INode<>("R",u2,e);
+    LNode<String> c=new LNode<>("C");
+    BinNode<String> t3=new INode<>("T",c,r1);
+
+
+    //루트 노드
+    BinNode<String> u1=new INode<>("U",a1,t3); // root node
+    System.out.print("preorder: ");
+    preorder(u1);
+
+    System.out.println();
+    System.out.print("inorder: ");
+    inorder(u1);
+    
+    System.out.println();
+    System.out.print("postorder: ");
+    postorder(u1);
+}
+
+
 ```
+![res_image](https://user-images.githubusercontent.com/76093968/178694366-e743c590-5d24-4008-b81f-b2c239a0c8f5.png)
 
 
